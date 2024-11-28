@@ -1,0 +1,81 @@
+https://github.com/kloudvsol/AWS/aws-project
+
+Here are the steps to set up an AWS project using Auto Scaling Groups (ASG), EC2 instances, and an Elastic Load Balancer (ELB):
+
+Launch EC2 Instances:
+
+Go to the EC2 dashboard.
+
+Click "Launch Instance."
+
+Choose an Amazon Machine Image (AMI).
+
+Select the instance type.
+
+Configure the instance details, such as VPC, subnet, and IAM role.
+
+Add storage and tags.
+
+Configure the security group to allow necessary ports (e.g., HTTP/HTTPS).
+
+Review and launch the instance.
+
+Create a Load Balancer (ELB):
+
+Go to the EC2 dashboard.
+
+Under "Load Balancing," click "Load Balancers."
+
+Click "Create Load Balancer."
+
+Select the type of load balancer (e.g., Application Load Balancer).
+
+Configure the basic settings, such as name, scheme, and IP address type.
+
+Configure the listeners and routing, setting the target group for your EC2 instances.
+
+Add security groups.
+
+Configure the health checks to monitor the health of your instances.
+
+Register your EC2 instances with the load balancer.
+
+Set Up Auto Scaling Group (ASG):
+
+Go to the EC2 dashboard.
+
+Under "Auto Scaling," click "Auto Scaling Groups."
+
+Click "Create Auto Scaling group."
+
+Choose the launch configuration or template for your instances.
+
+Configure the group size, network, and subnets.
+
+Attach the load balancer created earlier to the Auto Scaling group.
+
+Configure the scaling policies (e.g., scaling up when CPU utilization exceeds 70%).
+
+Review and create the Auto Scaling group.
+
+Test the Setup:
+
+Ensure that the load balancer is distributing traffic across your EC2 instances.
+
+Verify that Auto Scaling is working by simulating load and observing if new instances are launched or terminated as expected.
+
+Monitor the health of instances and the load balancer using CloudWatch.
+
+Here's a quick example configuration:
+
+AMI: Amazon Linux 2
+
+Instance Type: t2.micro
+
+Security Group: Allow HTTP (port 80) and SSH (port 22)
+
+Load Balancer: Application Load Balancer
+
+Scaling Policy: Scale up when CPU > 70%, scale down when CPU < 30%
+
+
